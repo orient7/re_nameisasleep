@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『バドルフィールド』の記憶 (18/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『バドルフィールド』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_18_Battlefield', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***バトルフィールドが開く音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '……え！？ここはどこ！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'え！？なんで！？\nさっきまで図書館にいたのに！！',
+                },
+
+                { type: 'narration', text: '***ﾋﾟｺﾝ' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: 'まあまあ落ち着いてください。\nお、対戦相手の…「セジュン」さん、対戦よろしくおねがいします。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'あ！そうえば、私もマッチングしてる…。\n相手は……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '君たちには<b>ポケモンバトル</b>をしてもらうよ〜。\nポケモンのことはあんまり詳しくないけど……\n私のこと楽しませてね。',
+                },
+
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'ポケモンバトル！？\nじゃあ、対戦相手は……「ミソキン」！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: 'なるほど。あなたが対戦相手の「セジュン」さんでしたか。\n対戦よろしくおねがいします。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'え！？じゃあキンが……あの！？\nSV（ポケットモンスタースカーレット・バイオレット）シーズン20から今日に至るまで\n25期連続最終1位の歴代最強ポケモンプレイヤー。\n独特の戦術と圧倒的な読みで歴代の最終1位経験者も……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: 'そんな並べるほどの経歴ではないですよ。\nあなたは今はチャレンジャーなのですから。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'うわ、なんか強そ。\nポケモンよくわかんないけど、がんばれ〜。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '（並びは意外と普通…。\nこの並びだと「ルカリオ」が「メガルカリオZ」にメガ進化するから…。\nいや違う。前期の最終日に増加したのは、通常の「メガルカリオ」だったはず…。）',
+                },
+
+                { type: 'narration', text: '***対戦開始のBGMが流れる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'きっとこれでいいはず……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'なんなのあの不敵な笑みは……。',
+                },
+
+                { type: 'narration', text: '***しばらく静から時間が流れる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '（くそ！全然上手く行かない…。\nすべての行動が読まれてる気がする…。\nでもなんでだろう…なんだか楽しい…。）',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '……1…1…2…。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '（え……！？なにか言ってる。）',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '……1…1…2…3…5…8…13…21…34',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '（あれは……？<b>フィボナッチ数列…！？</b>）',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '（もしかして………！）\n……1…1…2…3…5…8…13…21…34…55………………………89…<span style="font-size: 20px">90<span>',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '…………！？\n……55…89…144…',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '……55…89…144…<span style="font-size: 20px">145<span>',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '…………！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '（なにこれ……。\n常に相手の一枚上の選択できてる……。\nこれ…ほんとにわたし？）',
+                },
+
+                { type: 'narration', text: '***対戦終了のBGMが流れる。' },
+                { type: 'narration', text: '***ゲーム機を置く音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '素晴らしい試合でした。\nくだらないと感じる世の中ですが、今の対戦は面白かった。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'なんで、私に答えを教えてくれたんですか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '答えを…？\nそんなつもりはありませんが…\nしいて言うなら、<b>あなたは私よりも純粋に見えたからです。</b>',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '対戦ありがとうございました。「セジュン」さん……。\nいいえ……、「ネコ」さん……。\nあとは…頼みました……。',
+                },
+
+                { type: 'narration', text: '***倒れる音。' },
+                { type: 'narration', text: '***時計の鐘の音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'え……？ヒカさん……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'まさかネコちゃんが勝っちゃうなんてね。\nよくわかんないけど、びっくり〜。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'そうえば言ってなかっけど、負けたほうは……\n<b>この世から消えてもらうからね〜。</b>バイバイ〜。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'え……！？うそ……！？\nなんで……？なんでそんなことするの……！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '純粋だね…。ネコちゃんは……。',
+                },
+
+                { type: 'narration', text: '***バトルフィールドが閉じる音。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

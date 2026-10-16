@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『館』の記憶 (5/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『館』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_5_Mansion', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***強い雨音に混じり、徐々に人の声が近づく。' },
+
+                { type: 'message', speaker: 'Person15', text: 'あれ、そうじゃない？' },
+                { type: 'message', speaker: 'Person13', text: 'うん、私が見た館だと思う。' },
+                {
+                    type: 'message',
+                    speaker: 'Person6',
+                    text: '「ヨイザキ」さんちか。チャイムとか無くない？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'あの扉についてるノッカーを鳴らすんじゃないかな……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: 'じゃあ僕、チュウくんと、マコト先生、迎えに行ってくる。',
+                },
+                { type: 'message', speaker: 'Person15', text: '分かった。チャン、気を付けて。' },
+
+                { type: 'narration', text: '***一人分の足跡が遠ざかる。' },
+                { type: 'narration', text: '***ノックの音が響く。' },
+
+                { type: 'message', speaker: 'Person16', text: '……反応ないペコ。' },
+                { type: 'message', speaker: 'Person18', text: 'おい、扉開いてる。' },
+                { type: 'message', speaker: 'Person6', text: 'すみませーん、誰かいますかー？' },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: '電気付いてるのに、誰もいないのかな。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: '雨で寒いし、ちょっと上がらせてもらおうぜ。',
+                },
+                { type: 'message', speaker: 'Person20', text: '勝手にいいのかな……。' },
+
+                { type: 'narration', text: '***複数人の足音が館の中に続く。' },
+                { type: 'narration', text: '***扉が閉まる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person14',
+                    text: '中は思ったよりきれいだな。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person13',
+                    text: 'なんだか寒いわ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'お、おい……。\nもう帰ろうぜ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person14',
+                    text: '何だよタケシ、ビビってんのか？',
+                },
+
+                { type: 'narration', text: '***ﾊﾟﾘｰﾝ' },
+                { type: 'narration', text: '***遠くで皿が割れる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: '！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'お、おい……。\nもう……帰ろうぜ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '馬鹿馬鹿しい……。\nお化けなどいるわけないでしょう。\n科学的に考えて……。',
+                },
+
+                { type: 'narration', text: '***一人分の足跡が遠ざかる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'お、おい！\nムテキ！\n気をつけろよ！！',
+                },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'あれ、誰か閉めたの？もう全員入った？\n……ねえ、扉開かないんだけど！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'はあ？ちょっと替われ。',
+                },
+
+                { type: 'narration', text: '***扉を叩く音や、扉にぶつかる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '開かない……だと……！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person6',
+                    text: '建付けが悪いのかな。他に出れそうなとこ探そう。',
+                },
+
+                { type: 'narration', text: '***話し声が散らばる。' },
+
+                { type: 'message', speaker: 'Person7', text: '……。' },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: 'デンジロウさん、どうしたんですか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'ここに来るまでにちょっと足捻っちゃいました。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: '先頭で危ないとこ先に歩いててくれたもんね。\nしばらくここで休んでくださいね。',
+                },
+                { type: 'message', speaker: 'Person7', text: 'ありがとうございます。' },
+
+                { type: 'narration', text: '***しばらく、窓の外の雨音が続く。' },
+                { type: 'narration', text: '***物音がした後に、木が燃える音。' },
+                { type: 'narration', text: '***徐々に人が戻ってくる。' },
+
+                { type: 'message', speaker: 'Person6', text: 'どしたのこれ！？' },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: '私が火を付けておきました。皆さん、雨で濡れたままじゃ風邪引いてしまいますから。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: 'すごーい！私、暖炉に火とか付けたことない！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'はぴエネー！！',
+                },
+
+                { type: 'message', speaker: 'Person15', text: '出入りできる場所、ないっぽいね。' },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '窓ガラス割れないのあり得なくね！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: '強化ガラスとかなのかな。でも、窓が開かないのっておかしいよね。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: 'にしても私の家の10分の1にも満たないくだらない家ですね……\nもしかして犬小屋ですか？\n庭には出れましたけど、塀が高くて息苦しい。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: 'この館に閉じ込められちゃったってこと……？',
+                },
+
+                { type: 'narration', text: '***気まずい沈黙が流れる。' },
+                { type: 'narration', text: '***時計の鐘の音が2回、館中に鳴り響く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'びびったー。階段のとこにあった時計の音か。',
+                },
+                { type: 'message', speaker: 'Person15', text: '俺、もう一回見てくるよ。' },
+                { type: 'message', speaker: 'Person13', text: '二階も一応見てくる。' },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: '私、<b>キッチン</b>で食べれるものないか探してみる。\nみんなお菓子くらいしか持ってないだろうし。',
+                },
+                { type: 'message', speaker: 'Person10', text: 'アイリス、俺も行くわ。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

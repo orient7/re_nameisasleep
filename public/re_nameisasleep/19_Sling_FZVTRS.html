@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『スリング』の記憶 (19/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『スリング』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_19_Sling', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***バトルフィールドが開く音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '……ここは？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: '……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '君たちには<b>殺し合い</b>をしてもらうよ〜。\n飛び道具対決……わくわくするな〜。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '……わかったわ。\nごめんなさい、ヨネムラさん。どのみち全員殺すつもりだったの。',
+                },
+
+                { type: 'narration', text: '***銃をリロードする音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'トモエさん、落ち着いてくだ……。',
+                },
+
+                { type: 'narration', text: '***発砲音が響き渡る。' },
+                { type: 'narration', text: '***突如、大きな爆発音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'ごほっ、ごほっ。\nこれは……煙幕…！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'トモエさん、落ち着いてください。\nあなたが人を殺す理由なんてない。',
+                },
+
+                { type: 'narration', text: '***激しい銃声が続く。' },
+                { type: 'narration', text: '***その銃弾を跳ね返す音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '違うわ。私は全員殺さなければならないの……。',
+                },
+
+                { type: 'narration', text: '***さらに銃声が激しくなる。' },
+                { type: 'narration', text: '***その銃弾を跳ね返す音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'あなたは惑わされている！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '違うわ。私は全員殺さなければ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'はぴエネー！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'え……！？',
+                },
+
+                { type: 'narration', text: '***注射器が体に刺さる音。' },
+                { type: 'narration', text: '***倒れる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'え！？もう殺しちゃった！？\n煙幕で全然見えなかったよ〜。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: '殺してはいません。\n眠らせただけです。',
+                },
+
+                { type: 'narration', text: '***ﾊﾟﾘｰﾝ、窓ガラスが割れる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'あぶな！？\n私を攻撃するのはなしでしょ〜。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'あなたはなぜ…こんなことをしているのですか…？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'こんなことって？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'この館はどうにもおかしい…。\nそう感じたので、はねエネが開発した特製「粒子観測機」を設置しました。\nすると、この館は粒子の流れが明らかにおかしい。\n一箇所に吸い込まれているような流れ方をしていたです。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: '私は、館内に固定カメラを設置しました。\nすると昨晩、カツラギさんの地面に空いた穴に吸い込まれていく様子が写り…\nさらに、固定カメラも一緒にその穴に吸い込まれていきました。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'そしてその監視カメラに写ったのは…カツラギさんがカネキさんを射殺する姿。\n私は目を疑いましたが、この空間にやってきて理解しました。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'この空間には「殺気」を覚える成分が含まれた気体漂っている…。\n「人間ぶっ殺しゾーン」の気体にも含まれていた異常な成分も同じでしょう。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'でも大丈夫です。トモエさんにも、カツラギさんにも\nもうすでに「記憶忘却剤」を注入しています。\n人を殺したことも忘れているでしょう……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'そこまでわかってるんだ〜…。\nじゃあ、死んでもらおっかな〜。\nどのみち決着がつかなかったら二人とも死ぬし〜…。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'いいえ、まだ肝心なことがわかっていません。\n<b>なぜ、あなたはこのようなことをしているのですか？</b>',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '理由もなにも…それが私が生まれてき理由だからさ…。\nあと、1分もたたずに二人とも死んじゃうけど、大丈夫？',
+                },
+
+                { type: 'narration', text: '***拳銃を拾う音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'トモエさん……。そして他の皆さん……。\nあとは頼みました……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '……！？',
+                },
+
+                { type: 'narration', text: '***発砲音。' },
+                { type: 'narration', text: '***時計の鐘の音。' },
+                { type: 'narration', text: '***バトルフィールドが閉じる音。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

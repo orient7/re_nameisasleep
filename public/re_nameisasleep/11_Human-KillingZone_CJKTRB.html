@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『人間ぶっ殺しゾーン』の記憶 (11/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『人間ぶっ殺しゾーン』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_11_Human-KillingZone', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'message', speaker: 'Person13', text: '寝やすいようにソファ動かそー。' },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '一人で大丈夫。\n私の能力使ったら一瞬だから。',
+                },
+                { type: 'message', speaker: 'Person13', text: 'じゃあ、布団運んでくるね。' },
+                { type: 'message', speaker: 'Person20', text: '私も一緒に行く。' },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'たしか、ロビーから2階の寝室にあったはずよ。',
+                },
+                { type: 'message', speaker: 'Person13', text: 'オッケー。ありがとう。' },
+
+                { type: 'narration', text: '***扉の開く音。' },
+                { type: 'narration', text: '***2人が部屋の外へ出る足音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '私はお手洗い行ってくるよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person6',
+                    text: 'でっかい冷凍庫に材料もたくさんあったし、明日の料理の仕込みもしとこうかな。\n寝れそうな気がしないし、何かしてると落ち着くから。',
+                },
+
+                { type: 'narration', text: '***さらに部屋の外へ出る足音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'いってらっしゃい。\n……ロボさん、大丈夫？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: 'ﾋﾟﾋﾟﾋﾟﾋﾟ。\nリカバリーモードが無事起動しました。\nメモリの書き換えが検出されました。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'え、ほんと？よかった〜。\n……メモリの書き換え？',
+                },
+
+                { type: 'narration', text: '***時計の鐘の音が館中に鳴り響く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: 'マミさんは魔法少女なんだよね？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'え、そうだけど……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: 'なんで魔法少女になったの？\n魔法少女になっても<b>ソウルジェムが濁れば魔女になる</b>のに……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'え……どういうこと……？\n魔法少女が魔女に…なるって……。\nもし、その話が本当なら……。\n<b style="font-size: 30px; color:red;">みんな死ぬしかないじゃない！！</b>',
+                },
+
+                { type: 'narration', text: '***発泡音。' },
+                { type: 'narration', text: '***時計の鐘の音。' },
+                { type: 'narration', text: '***部屋の外へ出る足音。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

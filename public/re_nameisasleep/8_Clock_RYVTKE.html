@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『時計』の記憶 (8/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『時計』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_8_Clock', true);
+
+            //会話内容
+            const talks = [
+                /* 見本
+            {
+              type: "narration",
+              text: "***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。"
+            },
+            {
+              type: "message",
+              speaker: "Person2",
+              text: "ホテルまであとどれくらい？"
+            },
+            */
+
+                { type: 'narration', text: '***近くの部屋の中から話し声が聞こえる。' },
+
+                { type: 'message', speaker: 'Person11', text: '寝かせたぞ。どうしたらいい？' },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: '様子をよく見ておいて。\nえずいたら、全部吐き出せるように介助して。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person16',
+                    text: 'オトハラ？オトハラー！？\nノンデリ、こっち見てほしいペコ。\nオトハラが、息してないペコ……。',
+                },
+                { type: 'message', speaker: 'Person8', text: '……。脈もない……。' },
+
+                { type: 'narration', text: '***ごく近くで大きな時計の鐘の音。' },
+
+                { type: 'message', speaker: 'Person11', text: 'まじかよ……。' },
+                { type: 'message', speaker: 'Person6', text: '噓でしょ、オトハラくん……。' },
+                { type: 'message', speaker: 'Person13', text: 'どうしたの？' },
+                { type: 'message', speaker: 'Person8', text: 'オトハラくんが……。' },
+
+                { type: 'narration', text: '***すすり泣く声。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'ねえ、アイリスちゃんも息、してない…！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'こっちもだ！コンドウも息してない！',
+                },
+
+                { type: 'narration', text: '***ごく近くで大きな時計の鐘の音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person16',
+                    text: 'なに、あの時計！\n人が死ぬたびに、おちょくってるペコ！？\nくそ、このボロ時計が！',
+                },
+
+                { type: 'narration', text: '***怒声がだんだん近づく。' },
+                { type: 'narration', text: '***蹴りつけられた衝撃音。' },
+
+                { type: 'message', speaker: 'Person16', text: 'う、わ！？' },
+                { type: 'message', speaker: 'Person23', text: 'ペコラ、危ない！' },
+                { type: 'message', speaker: 'Person16', text: '嘘ペコでしょ……？' },
+
+                { type: 'narration', text: '***ガタガタと階段を滑り落ちる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '『野』三人衆、こっち来てくれ！\n時計を起こすの手伝って！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'どうした……、！？誰か下敷きになってる！',
+                },
+                { type: 'message', speaker: 'Person17', text: 'ペコラか！？くそ！' },
+                { type: 'message', speaker: 'Person15', text: '動かすよ、せーの！' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: '嘘だろ？死んだ……のか？\n何があってこんなことになったんだ！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: 'ペコラが時計を蹴って、そしたら時計が倒れて、\nペコラはそれに押しつぶされて……。',
+                },
+
+                { type: 'narration', text: '***ごく近くで大きな時計の鐘の音。' },
+
+                { type: 'message', speaker: 'Person4', text: '時計、この状態でも壊れてないの……？' },
+                { type: 'message', speaker: 'Person13', text: 'ねえ、皆……。喰種くんも……。' },
+
+                { type: 'narration', text: '***しばらく沈黙の中ですすり泣く声が続く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'お墓とか、作ってあげたほうがいいかな……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: '死んだように見えても生き返ることもあるから、数日はそのままにしておこう。\nウサダくんも向こうの部屋に運んで。\nできれば血とかも掃除したほうがいい……。\nﾋﾟﾋﾟﾋﾟﾋﾟ',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '大丈夫？ロボ\n',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: '雨で水浸しになって\nうまく体が動かないみたい。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '私らに任せといて。\nリビングに運んでおくから。',
+                },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

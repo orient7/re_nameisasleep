@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>名簿作成</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>名簿作成</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <table class="record_list">
+                <thead>
+                    <tr>
+                        <th width="20px">声No</th>
+                        <th>写真</th>
+                        <th width="140px">姓(カナ)</th>
+                        <th width="120px">名(カナ)</th>
+                        <th width="100px">
+                            死亡要因
+                            <span class="help-icon">
+                                ?
+                                <span class="help-tooltip">
+                                    死に関与した人物・現象 または<br />
+                                    故意に死亡させる行動を誘導した人物
+                                </span>
+                            </span>
+                        </th>
+                        <th width="100px">死因</th>
+                        <th>メモ(自由入力欄)</th>
+                        <th width="180px">関係する調査記録No<br />姓/名/死亡要因/死因</th>
+                    </tr>
+                </thead>
+                <!-- テーブル生成 -->
+                <tbody id="dataTable"></tbody>
+            </table>
+
+            <br />
+            <p>※姓名はカタカナで入力してください。同姓や同名はありません。</p>
+            <p>※入力した内容は自動保存されます。</p>
+            <p>※全員の姓、名、死亡要因、死因を入力したら、調査結果を提出してください。</p>
+            <p>
+                ※詳細なヒントが欲しい方はこちらから。
+                <a href="https://note.com/maru444/n/n13abfc84d150" target="_blank">→ヒントページ</a>
+            </p>
+
+            <br />
+            <!-- 1周目のみ -->
+            <input type="button" id="submitBtn1" value="調査結果を提出" onclick="submitResult()" />
+            <!-- 2周目のみ -->
+            <input
+                type="button"
+                id="submitBtn2"
+                value="調査結果を再提出"
+                onclick="submitResult2()"
+            />
+        </div>
+
+        <!-- スマホ版 各Noジャンプ用 -->
+        <button id="jumpToggle">≡</button>
+        <div class="jump-panel" id="jumpPanel"></div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+
+        <script>
+            /* ===== 定数 ===== */
+            const ROW_COUNT = 24;
+            const STORAGE_KEY = 'deathData';
+            const ERROR_KEY = 'deathErrors';
+            const table = document.getElementById('dataTable');
+            const isSecondRound = localStorage.getItem('visited_32_BeforeReporting') === 'true';
+
+            // テーブル生成
+            for (let i = 0; i < ROW_COUNT; i++) {
+                const row = document.createElement('tr');
+                const imgNo = String(i + 1).padStart(2, '0');
+                row.id = `row-${i + 1}`;
+
+                row.innerHTML = `
+                    <td class="no" data-label="声No">${i + 1}</td>
+                    <td class="photo">
+                        <img src="/re_nameisasleep/img/person_${imgNo}.png" alt="人物${i + 1}">
+                    </td>
+                    <td data-label="姓(カナ)"><input type="text" class="lastName" name="lastName"></td>
+                    <td data-label="名(カナ)"><input type="text" class="firstName" name="firstName"></td>
+                    <td data-label="死亡要因">
+                        <label class="selectbox-3">
+	                        <select class="deathFactor" name="deathFactor">
+                                <option value="">---</option>
+                                ${deathFactors.map((v) => `<option value="${v}">${v}</option>`).join('')}
+                            </select>
+	                    </label>
+                    </td>
+                    <td data-label="死因">
+                        <label class="selectbox-3">
+                            <select class="cause" name="cause">
+                                <option value="">---</option>
+                                ${causesOfDeath.map((v) => `<option value="${v}">${v}</option>`).join('')}
+                            </select>
+ 	                    </label>
+                    </td>
+                    <td data-label="メモ(自由入力欄)"><input type="text" class="memo" name="memo"></td>
+                    <td class="hint" data-label="関係する調査記録No　姓/名/死亡要因/死因">${hints[i] ?? ''}</td>
+                `;
+
+                table.appendChild(row);
+            }
+
+            /* ===== No25（条件付き） ===== */
+            if (isSecondRound) {
+                const row25 = document.createElement('tr');
+
+                row25.classList.add('is-special'); // 背景色用
+                row25.innerHTML = `
+                    <td class="no" data-label="声No">25</td>
+                    <td class="photo">
+                        <img src="/re_nameisasleep/img/person_25.png" alt="人物25">
+                    </td>
+                    <td data-label="姓(カナ)"><input type="text" class="lastName" name="lastName"></td>
+                    <td data-label="名(カナ)"><input type="text" class="firstName" name="firstName"></td>
+                    <td data-label="死亡要因">
+                    <label class="selectbox-3">
+                        <select class="deathFactor" name="deathFactor">
+                            <option value="">---</option>
+                            ${deathFactors.map((v) => `<option value="${v}">${v}</option>`).join('')}
+                        </select>
+                    </label>
+                    </td>
+                        <td data-label="死因">
+                            <label class="selectbox-3">
+                                <select class="cause" name="cause">
+                                    <option value="">---</option>
+                                    ${causesOfDeath.map((v) => `<option value="${v}">${v}</option>`).join('')}
+                                </select>
+                            </label>
+                        </td>
+                    <td data-label="メモ(自由入力欄)"><input type="text" class="memo" name="memo"></td>
+                    <td class="hint" data-label="関係する調査記録No　姓/名/死亡要因/死因"><details><summary></summary>5 / 29,31 / 28 / 28</details></td>
+                `;
+
+                table.appendChild(row25);
+            }
+
+            //死亡要因のプルダウン　2周目用
+            if (isSecondRound) {
+                table.querySelectorAll('select.deathFactor').forEach((select) => {
+                    const currentValue = select.value; // 入力保持用
+
+                    // プルダウン中身を差し替え
+                    select.innerHTML = `
+                        <option value="">---</option>
+                        ${deathFactors2.map((v) => `<option value="${v}">${v}</option>`).join('')}
+                    `;
+
+                    // 既に入力されていた値があれば復元
+                    if (deathFactors2.includes(currentValue)) {
+                        select.value = currentValue;
+                    }
+                });
+            }
+
+            /* ===== 赤背景復元 ===== */
+            function restoreErrors() {
+                const errors = JSON.parse(localStorage.getItem(ERROR_KEY));
+                if (!errors) return;
+
+                errors.forEach((err) => {
+                    const row = table.querySelectorAll('tr')[err.row];
+                    if (!row) return;
+                    const el = row.querySelector('.' + err.field);
+                    if (el) el.classList.add('error');
+                });
+            }
+
+            /* ===== 入力時に赤解除 ===== */
+            function clearErrorOnEdit(e) {
+                const el = e.target;
+                if (!(el.tagName === 'INPUT' || el.tagName === 'SELECT')) return;
+                if (!el.classList.contains('error')) return;
+
+                el.classList.remove('error');
+
+                const row = el.closest('tr');
+                const rowIndex = [...table.querySelectorAll('tr')].indexOf(row);
+                const field = [...el.classList].find((c) =>
+                    ['lastName', 'firstName', 'deathFactor', 'cause'].includes(c)
+                );
+
+                let errors = JSON.parse(localStorage.getItem(ERROR_KEY)) || [];
+                errors = errors.filter((e) => !(e.row === rowIndex && e.field === field));
+                localStorage.setItem(ERROR_KEY, JSON.stringify(errors));
+            }
+
+            /* ===== 提出ボタン切り替え ===== */
+            const btn1 = document.getElementById('submitBtn1');
+            const btn2 = document.getElementById('submitBtn2');
+
+            if (isSecondRound) {
+                // 2周目
+                btn1.style.display = 'none';
+                btn2.style.display = 'inline-block';
+            } else {
+                // 1周目
+                btn1.style.display = 'inline-block';
+                btn2.style.display = 'none';
+            }
+
+            /* ===== 提出＆判定 ===== */
+            function submitResult() {
+                //戻るボタン対応の再読み込み
+                autoLoad();
+
+                let allCorrect = true;
+                const errorList = [];
+
+                table.querySelectorAll('tr').forEach((row, i) => {
+                    const correct = correctData[i];
+                    if (!correct) return;
+
+                    ['lastName', 'firstName', 'deathFactor', 'cause'].forEach((field) => {
+                        const el = row.querySelector('.' + field);
+                        el.classList.remove('error');
+
+                        if (el.value !== correct[field]) {
+                            el.classList.add('error');
+                            errorList.push({ row: i, field });
+                            allCorrect = false;
+                        }
+                    });
+                });
+
+                localStorage.setItem(ERROR_KEY, JSON.stringify(errorList));
+
+                window.location.href = allCorrect
+                    ? '/re_nameisasleep/31_END2_LAMZBT.html'
+                    : '/re_nameisasleep/30_END1_QWUPKC.html';
+            }
+
+            /* ===== 提出＆判定（2周目） ===== */
+            function submitResult2() {
+                //戻るボタン対応の再読み込み
+                autoLoad();
+
+                let allCorrect = true;
+                const errorList = [];
+
+                table.querySelectorAll('tr').forEach((row, i) => {
+                    const correct = correctData2[i];
+                    if (!correct) return;
+
+                    // 判定対象フィールド
+                    ['lastName', 'firstName', 'deathFactor', 'cause'].forEach((field) => {
+                        const el = row.querySelector('.' + field);
+                        if (!el) return;
+
+                        el.classList.remove('error');
+
+                        let isFieldCorrect = true;
+
+                        // ---- 特殊判定（firstName が __ANY__ の場合）----
+                        if (field === 'firstName' && correct.firstName === '__ANY__') {
+                            if (!el.value || el.value.trim() === '') {
+                                isFieldCorrect = false;
+                            }
+                        } else {
+                            if (el.value !== correct[field]) {
+                                isFieldCorrect = false;
+                            }
+                        }
+
+                        if (!isFieldCorrect) {
+                            el.classList.add('error');
+                            errorList.push({ row: i, field });
+                            allCorrect = false;
+                        }
+                    });
+                });
+
+                // エラー情報を保存（戻ってきても赤が残る）
+                localStorage.setItem(ERROR_KEY, JSON.stringify(errorList));
+
+                // 結果遷移
+                window.location.href = allCorrect
+                    ? '/re_nameisasleep/33_END3_DPRJXK.html'
+                    : '/re_nameisasleep/30_END1_QWUPKC.html';
+            }
+
+            /* ===== イベント ===== */
+            table.addEventListener('input', autoSave);
+            table.addEventListener('change', autoSave);
+            table.addEventListener('input', clearErrorOnEdit);
+            table.addEventListener('change', clearErrorOnEdit);
+
+            autoLoad();
+            restoreErrors();
+
+            /* ===== BFCache対策(戻るボタンで保存前の画面の呼び出し禁止) ===== */
+            window.addEventListener('pageshow', (event) => {
+                if (event.persisted) {
+                    autoLoad();
+                }
+            });
+
+            //スマホ版 各Noジャンプ用
+            const MAX_NO = 25;
+            const panel = document.getElementById('jumpPanel');
+            const toggle = document.getElementById('jumpToggle');
+
+            // トグル
+            toggle.onclick = () => {
+                panel.classList.toggle('open');
+            };
+
+            // ボタン生成
+            for (let i = 1; i <= MAX_NO; i++) {
+                const btn = document.createElement('button');
+
+                // 25だけ特別
+                if (i === 25) {
+                    btn.textContent = '▽';
+                    btn.onclick = () => {
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                        panel.classList.remove('open');
+                    };
+                } else {
+                    btn.textContent = i;
+                    btn.onclick = () => {
+                        const target = document.getElementById(`row-${i}`);
+                        const y =
+                            document.getElementById(`row-${i}`).getBoundingClientRect().top +
+                            window.pageYOffset -
+                            80;
+
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                        panel.classList.remove('open');
+                    };
+                }
+
+                panel.appendChild(btn);
+            }
+        </script>
+    </body>
+</html>

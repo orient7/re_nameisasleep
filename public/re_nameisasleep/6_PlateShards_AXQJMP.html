@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『皿の破片』の記憶 (6/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『皿の破片』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_6_PlateShards', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***足音が近づいてくる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '皿が割れていますね……。',
+                },
+
+                { type: 'narration', text: '***さらに足音が近づいてくる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: 'あ、イワマくん来てたんだね。\nなにか食料になりそうなものあった？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: 'おーい、タクロウもキッチン手伝ってくれよ。\n思ったより広くてさ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '僕は 「喰種」だ……！\n何も出来ないのは…もう嫌なんだ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: 'え……こわ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '僕は僕の大事な人を奪われたくない……。\nだから強くならなきゃいけないんだ……。',
+                },
+                { type: 'message', speaker: 'Person14', text: 'おいおいカイト、何絡んでんの？' },
+                { type: 'message', speaker: 'Person10', text: 'タクロウ！どこ行ってたんだよ。' },
+                {
+                    type: 'message',
+                    speaker: 'Person14',
+                    text: 'トイレ。水流れて助かったー。\nてかムテキ、何やってんだ？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '散らばった皿の破片の片付けをしていました。\nなにかに役立ちそうなので、一枚持っておきましょう。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: 'うわ、趣味わりぃ。\nま、いいや。二人とも食料探し手伝って。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '私は隣の図書室らしき部屋を見てきます。',
+                },
+
+                { type: 'narration', text: '***1人が遠ざかる足音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: 'タクロウと喰種……くん？も来てくれたんだね。\nレトルトのカレーとご飯があったから今作ってるよ。\n全員分には足りないから、他にも大丈夫そうなの探して。',
+                },
+                { type: 'message', speaker: 'Person14', text: 'オッケー。' },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: 'アイリスこれ、手でパウチ開けるの超ミスってるじゃん。\nめっちゃ斜めになってる！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: 'う、うるさいな、結局開いたんだからいいの！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: 'これで開けたのか。刃にカレーつきっぱなしだぞ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: '後でまとめて洗うから、今は食べ物探してきて！',
+                },
+                { type: 'message', speaker: 'Person10', text: 'へーい。' },
+                {
+                    type: 'message',
+                    speaker: 'Person14',
+                    text: '賞味期限がセーフのやつ、この机の上に置いとくぞ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '僕は人間なのにそれが食べたくて仕方がなくて……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: 'お、これいいな。カレーに入れるか。',
+                },
+
+                { type: 'narration', text: '***鍋に具材が入れられる音。' },
+
+                { type: 'message', speaker: 'Person21', text: 'ん？何入れたの？' },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: '生レバー。具がなんかあったほうがいいだろ。',
+                },
+                { type: 'message', speaker: 'Person21', text: '賞味期限ちゃんと見たよね？' },
+                { type: 'message', speaker: 'Person10', text: '大丈夫だって。' },
+
+                { type: 'narration', text: '***しばらく物を漁る音が続く。' },
+
+                { type: 'message', speaker: 'Person21', text: 'カレー出来たよ！' },
+                { type: 'message', speaker: 'Person14', text: '結構いいじゃん！' },
+                {
+                    type: 'message',
+                    speaker: 'Person10',
+                    text: '腹減ったー。皆どっか行ってるし先食おうぜ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: 'だね。カレーは4人分しかないし。\n……ちょっとタクロウ！あんたの分だけよそいすぎ！\n私とイワマくんのが少なくなっちゃうじゃん！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person14',
+                    text: 'えっまじ？いつもより少なくしたんだけど。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: 'もう\n喰べたくない……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person21',
+                    text: 'えー？喰種くん全然よそってないじゃん。\nはぁ、いいならいいけど。\n……じゃあ、いただきます！',
+                },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

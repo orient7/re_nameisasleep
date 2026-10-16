@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>調査記録</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>調査記録</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th width="20px">No</th>
+                        <th>
+                            タイトル
+                            <span class="help-icon">
+                                ?
+                                <span class="help-tooltip">
+                                    館の各部屋、または<br />
+                                    死亡時傍にあったものの記憶
+                                </span>
+                            </span>
+                        </th>
+                        <th width="80px">関係する<br />調査記録No</th>
+                    </tr>
+                </thead>
+                <tbody id="archive-body">
+                    <!-- JSで生成 -->
+                </tbody>
+            </table>
+
+            <br />
+
+            <p>※調査記録は時系列順に並びます。</p>
+            <p>※Noの順番通りに検索でヒットしない場合があります。</p>
+            <p>
+                ※詳細なヒントが欲しい方はこちらから。
+                <a href="https://note.com/maru444/n/n13abfc84d150" target="_blank">→ヒントページ</a>
+            </p>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+        <!-- 調査記録テーブル書き出し -->
+        <script>
+            const highlightNos = [4, 6, 14, 20, 21, 26, 28, 29]; //2周目のみ会話ありページ
+            const tbody = document.getElementById('archive-body');
+
+            archiveData.forEach((item) => {
+                // ★ No30の前に「エンディングリスト」行を追加
+                if (item.no === 23) {
+                    // 空白行
+                    const spacer = document.createElement('tr');
+                    spacer.innerHTML = `<td colspan="3" style="height:50px;"></td>`;
+                    tbody.appendChild(spacer);
+
+                    const endingTr = document.createElement('tr');
+                    endingTr.classList.add('ending-header');
+
+                    endingTr.innerHTML = `<td colspan="3" class="ending-title">エンディングリスト</td>`;
+
+                    tbody.appendChild(endingTr);
+                }
+
+                const tr = document.createElement('tr');
+                tr.dataset.no = item.no; // ← Noを保持
+
+                // No
+                tr.innerHTML += `<td>${item.no}</td>`;
+
+                // タイトル
+                if (item.visited) {
+                    tr.innerHTML += `
+                    <td>
+                        <a href="${item.url}">${item.title}</a>
+                    </td>
+                    `;
+                } else {
+                    tr.innerHTML += `<td class="empty">―――</td>`;
+                }
+
+                // 関連No
+                tr.innerHTML += `<td>${item.related}</td>`;
+
+                tbody.appendChild(tr);
+            });
+
+            //2周目のみ会話ありページに色付け
+            const flag = localStorage.getItem('visited_32_BeforeReporting');
+
+            if (flag === 'true') {
+                document.querySelectorAll('#archive-body tr').forEach((tr) => {
+                    const no = Number(tr.dataset.no);
+
+                    if (highlightNos.includes(no)) {
+                        tr.classList.add('highlight-row');
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

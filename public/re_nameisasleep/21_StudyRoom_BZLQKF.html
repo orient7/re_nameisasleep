@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『書斎』の記憶 (21/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『書斎』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_21_StudyRoom', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***遠くから走る音が近づく。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: 'あそこです！あの奥の部屋です！',
+                },
+
+                { type: 'narration', text: '***突如、地面に大きな穴が開く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'おい、嘘だろ！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: 'ガブくん、あぶない！',
+                },
+
+                { type: 'narration', text: '***その穴に2人、吸い込まれる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'ホッグとリアスが吸い込まれた！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'ひとまずみんなあの部屋に避難しよう！',
+                },
+
+                { type: 'narration', text: '***扉が閉まる音。鍵がかかる。' },
+                { type: 'narration', text: '***扉の前に物が積み重なる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'バリケード…これで十分だといいけど……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'さっきの穴の分も含めて2体…バケモノが迫ってきてる。',
+                },
+
+                { type: 'narration', text: '***扉が強く叩かれる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'とりあえずできることをしましょう。\n私はこの部屋の本をざっと確認します。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'なんでおまえはそんな冷静でいられんだよ！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'まあ、もしかしたら何かわかるかもしれない。\n僕たちは扉を抑えよう。',
+                },
+
+                { type: 'narration', text: '***しばらく本を探る物音がする。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'どうやらこの館には2人の子供がいたようです。\n出生記録が書かれた手帳が2人分ありました。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'どういうことだ…？さっきの写真には1人しか写ってなかったよな…？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'あとから生まれたのでしょう。\n出生日時が2011年5月4日となっています。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: '同い年じゃねえか！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'その2人の子供の名前はわかるかい？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'いいえ、文字がかすれて名前が読めません。',
+                },
+
+                { type: 'narration', text: '***扉が強く叩かれる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'おい！もうそろそろ限界だぞ！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: 'この館…なにか変…。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '何が変なのですか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: '寝室と書斎の部屋の広さに対して、廊下が長すぎます。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '……ってことは……隠し部屋！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'だとしたら…<b>何の部屋</b>なんでしょうか…？',
+                },
+
+                { type: 'narration', text: '***扉が強く叩かれる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'もう無理だ！これ以上は……。',
+                },
+
+                { type: 'narration', text: '***突如、大きな発泡音。' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '***扉が開く音。' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: '何の音だ！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '……！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'みんな！大丈夫！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '……ってトモエさん！？生きてたんですか！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '私もいるよ。リーリヤちゃんも。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'あ……。え、えーと……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '……とりえあず、皆さん無事で良かった。\nトモエさん。説明していただけますか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '実は…私も何も覚えてなくて……。\nリーリヤさんと一緒に空き部屋で気を失っていたの……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'ナチョさんもですか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '私は…なんかよくわかんないところに飛ばされて……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'もしかして……ヒカさんも一緒に？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '実は……。',
+                },
+
+                { type: 'narration', text: '***突如、館内が激しく揺れる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: '何だこの揺れ！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '落ち着いて！みんな伏せて！！',
+                },
+
+                { type: 'narration', text: '***しばらくして揺れが収まる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'なんだったんだ今の？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'もしかしたら「けっとう」しているのかもしれません。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'ミルくんとガブくんがってこと……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'そういうことか……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'どういうこと？',
+                },
+
+                { type: 'narration', text: '***しばらく説明の時間が続く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'きっと手塚ゾーンにあったその絵本とこの館の現象がリンクしているのでしょう。\nにわかには信じられませんが……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'そんなことありえるのか……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '実は私…その「けっとうじょう」に飛ばされたの……。\nそこでキンとポケモンバトルをしたの……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'ポケモンバトルを……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '私…そのポケモンバトルに勝って…そしたらキンが……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '……わかったわ。',
+                },
+
+                { type: 'narration', text: '***時計の鐘の音が2回、館中に鳴り響く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '……！？\nどうやら…ガブさんとミルさんもいかれたようだね……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'まじかよ！？',
+                },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

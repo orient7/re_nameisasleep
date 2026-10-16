@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『キッチン』の記憶 (7/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『キッチン』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_7_Kitchen', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***遠くの話し声が近づく。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person16',
+                    text: 'めっちゃいい匂いするペコ～。\nえ？、大丈夫ペコ！？',
+                },
+                { type: 'message', speaker: 'Person17', text: 'どうしたんだ、しっかりしろ！' },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'おいおい、死んでないよな？\n誰か来てくれー！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: 'どうしたの？\n……ちょっと見せて。\n詳しくは分からないけど、吐いてるってことは食中毒かな。\n向こうの部屋に布団があったから、横向きで寝かせてあげて。\n吐いたものを喉に詰まらせないように、気を付けて。',
+                },
+
+                { type: 'narration', text: '***騒がしい声が部屋の外へ向かう。' },
+                { type: 'narration', text: '***部屋の中で何かを漁る物音がする。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'どうしたの？ゴミ箱に何かあるの？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person13',
+                    text: '食中毒だとしたら、原因は何だろうと思って。\nあ、多分この生レバーだ。賞味期限が3年も過ぎてる。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'コンドウさんが見間違えたのかな。\n眼鏡割れちゃったって言ってたし。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person13',
+                    text: 'うーん、そうなのかな。\nそれに、皿の破片が散らばってるけど\nちょうど一枚欠けているような……。',
+                },
+
+                { type: 'narration', text: '***時計の鐘の音。' },
+                { type: 'narration', text: '***部屋の外が途端に騒がしくなる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person13',
+                    text: 'ん？<b>時計</b>の音、さっきも鳴ったよね。時報にしては短いな。\nしかも、今回は1回だけ……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'ねぇ、それよりなんか騒がしくない？何かあったのかも。',
+                },
+                { type: 'message', speaker: 'Person13', text: '行ってみようか。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

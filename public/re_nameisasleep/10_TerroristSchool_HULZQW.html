@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『テロリスト塾』の記憶 (10/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『テロリスト塾』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_10_TerroristSchool', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'そういや、ニャンとボー戻ってこなかったよな。\nまぁ戻ってきても玄関開かねーんだけど。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'あー。どうにしかして助けを呼んでくれてたらいいんだけどな。\nてか、ボーも災難だよな。この雨の中を往復だぜ。\nただでさえ花粉症なのに、鼻水たらたらじゃねえか。\n',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'それどころじゃねーだろ……。\nったく、これだから格下の苗字のやつは。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'ハヤトだってミズノに負けてんだろ！\nチッ、うぜーな。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'あ、あ……。\n俺、布団持ってくるよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'たしか、2階の寝室にあるはずだよ。\n一人で大丈夫？',
+                },
+
+                { type: 'narration', text: '***急いで扉の開いて、外に出ていく足音。' },
+                { type: 'narration', text: '***勢いよく扉が閉まる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '行ちゃった……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '庶民の皆さん、落ち着いてください。\n明日には、アニがプライベートジェットで迎えに来てくれますから。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: 'え……私？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '違うと思うよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'まぁまぁ、今日は色んなことがありすぎたから。\n余裕がなくなるのも分かるよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: '……？確かに、なんでこんなにイライラしてるんだろ。\nこの館に入ってから妙に気持ちがざわつくっていうか……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'きっと疲れてるんだよ。今日はもう休もう。',
+                },
+
+                { type: 'narration', text: '***徐々に会話が途切れ、静かな時間が流れる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'たけしの野郎、遅くねぇか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '僕が様子を見てくるよ。',
+                },
+
+                { type: 'narration', text: '***扉を開く音' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'やべ、メガストーンどっかに落としちまった。\nホッグ、探してきてくんねぇか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: 'うん……。',
+                },
+
+                { type: 'narration', text: '***すると、遠くから悲鳴' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '大変だ！！\nハイタニくんが死んでる……！！',
+                },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

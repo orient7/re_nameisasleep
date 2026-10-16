@@ -1,0 +1,959 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f5f2;
+}
+
+/* =================================== */
+/* ヘッダー */
+/* =================================== */
+
+.site-header {
+    background-image: url('/re_nameisasleep/img/header_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1d365e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header_field {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* 3項目を等間隔 */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header_item img {
+    height: 50px;
+}
+
+.header_block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header_item img.header_text {
+    height: 35px;
+    width: auto;
+    display: block;
+}
+
+/* PC版のみテキスト画像表示 */
+.header_item img.pc-only {
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .header_item img.pc-only {
+        display: none;
+    }
+}
+
+/* 検索フォーム */
+.search_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    justify-content: flex-end;
+}
+
+.search_container input {
+    border: none;
+    outline: none;
+    width: 160px;
+}
+
+.search_container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search_icon {
+    width: 18px;
+    height: 18px;
+    stroke: #1d365e;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* ポップアップ */
+.search_popup {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #ffffff; /* 通常時 */
+    color: #1d365e;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 300px;
+    z-index: 3000;
+}
+
+/* ヒットなし・エラー時 */
+.search_popup.error {
+    background: #1d365e;
+    color: #fffafa;
+}
+
+.search_popup a {
+    color: #1d365e;
+    white-space: nowrap;
+}
+
+.popup_text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.popup_hit {
+    color: #32974b;
+    font-size: 13px;
+}
+
+.popup_error {
+    color: #a94442;
+    font-size: 13px;
+}
+
+/* =================================== */
+/* フッター */
+/* =================================== */
+
+footer {
+    width: 100%; /* 画面が狭いときは100%に縮む */
+    text-align: center; /* 水平方向を中央に */
+    font-family: serif;
+    background-color: #1d365e;
+    color: #ffffff;
+    font-size: small;
+    padding: 15px 0px 15px 0px; /* 上右下左の余白（スマホ対策） */
+}
+
+/* リンクの文字色 */
+#footer a {
+    color: #fffafa;
+}
+
+#footer a:visited {
+    color: #ede1e1;
+}
+
+#footer a:hover,
+#footer a:active {
+    color: #fffafa;
+}
+
+/* =================================== */
+/* 調査方法 */
+/* =================================== */
+.center-image {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
+
+/* スマホ用（768px以下） */
+@media screen and (max-width: 768px) {
+    .center-image {
+        width: 100%;
+    }
+}
+
+/* PCでだけ画像を出す */
+.pc-only {
+    display: block;
+}
+.sp-only {
+    display: none;
+}
+
+/* スマホでだけ画像を出す */
+@media screen and (max-width: 768px) {
+    .pc-only {
+        display: none;
+    }
+    .sp-only {
+        display: block;
+    }
+}
+
+.document {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    background: #fff;
+    border: 1px solid #333;
+    font-family: '游明朝', serif;
+    line-height: 2;
+}
+
+/* 宛名 */
+.doc-title {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+/* 本文 */
+.doc-body {
+    margin-bottom: 50px;
+}
+
+/* 署名見出し */
+.doc-sign {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* 名前入力 */
+.doc-name {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.doc-name input {
+    width: 100px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* 提出ボタン */
+.doc-submit {
+    text-align: center;
+}
+
+.doc-submit button {
+    padding: 8px 30px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    background: #f7f5f2;
+    cursor: pointer;
+}
+
+.doc-submit button:hover {
+    background: #eae6df;
+}
+
+/* =================================== */
+/* 調査記録 */
+/* =================================== */
+
+.archive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* テーブルのヘッダを固定 */
+.archive-table thead th {
+    position: sticky;
+    top: 70px;
+    background: #f7f5f2;
+    z-index: 2;
+}
+
+.archive-table th,
+.archive-table td {
+    border: none; /* 全ての境界線を削除 */
+    border-bottom: 1px solid #ccc; /* 下線を追加 */
+    padding: 8px;
+    text-align: left;
+}
+
+.archive-table tbody {
+    position: relative;
+    z-index: 1;
+}
+
+.archive-table a {
+    color: #1d365e;
+}
+
+.archive-table a:hover {
+    text-decoration: underline;
+}
+
+.archive-table .empty {
+    color: #aaa;
+}
+
+/* 2周目のみ表示ありのページ */
+.highlight-row {
+    background-color: #bc85be;
+    color: #ffffff;
+}
+
+.highlight-row a {
+    color: #ffffff;
+}
+
+.highlight-row a:visited {
+    color: #ffffff;
+}
+
+/* エンディングリスト */
+.ending-title {
+    text-align: center;
+    font-weight: bold;
+    background-color: #1d365e;
+    color: white;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.ending-header td {
+    border-top: 2px solid #1d365e;
+    border-bottom: 2px solid #1d365e;
+}
+
+/* =================================== */
+/* 名簿作成 */
+/* =================================== */
+
+.record_list {
+    /* 調査記録、名簿作成の表 */
+    border-collapse: collapse; /* 境界線を重ねる */
+    width: 100%;
+}
+
+/* テーブルのヘッダを固定 */
+.record_list thead th {
+    position: sticky;
+    top: 70px;
+    background: #f7f5f2;
+    z-index: 2;
+}
+
+.record_list th,
+td {
+    border: none; /* 全ての境界線を削除 */
+    border-bottom: 1px solid #ccc; /* 下線を追加 */
+    padding: 8px;
+    text-align: left;
+}
+
+.record_list tbody {
+    position: relative;
+    z-index: 1;
+}
+
+/* ヘルプアイコン */
+.help-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    border-radius: 50%;
+    background: #666;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+/* 吹き出し */
+.help-tooltip {
+    display: none;
+    position: absolute;
+    top: calc(130% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 三角 */
+.help-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
+}
+
+/* ホバーで表示 */
+.help-icon:hover .help-tooltip {
+    display: block;
+}
+
+/* 写真列 */
+.record_list td.photo {
+    width: 100px;
+    text-align: center;
+}
+
+.record_list td.photo img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.record_list input[type='text'] {
+    /* 名簿のテキストボックス */
+    width: 80%;
+    padding: 8px 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background: #ffffff;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.selectbox-3 {
+    /* 名簿のプルダウン */
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.selectbox-3::after {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 7px;
+    background-color: #535353;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+    pointer-events: none;
+}
+
+.selectbox-3 select {
+    appearance: none;
+    height: 2.5em;
+    padding: 0.4em calc(0.8em + 30px) 0.4em 0.8em;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #333333;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+input[type='button'] {
+    /* ボタン */
+    background-color: #fff;
+    border: solid 2px #191970;
+    color: #191970;
+    border-radius: 20px;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1em;
+    box-shadow: 0 5px 0 #191970;
+    display: inline-block;
+    transition: 0.3s;
+}
+input[type='button']:hover {
+    color: #191970;
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #191970;
+}
+
+/* 不正解（赤背景） */
+.record_list input[type='text'].error,
+.record_list .selectbox-3 select.error {
+    background-color: #f8b4b4 !important;
+}
+
+/* No25 専用背景 */
+.record_list tr.is-special {
+    background-color: #bc85be;
+}
+
+/* 入力欄も馴染ませる（任意・おすすめ） */
+.record_list tr.is-special input,
+.record_list tr.is-special select {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* スマホ版 各Noジャンプ用 */
+.jump-panel {
+    display: none;
+}
+
+#jumpToggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .jump-panel {
+        position: fixed;
+        bottom: -370px;
+        left: 0;
+        width: 100%;
+        background: #1d365e;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+        transition: bottom 0.3s ease;
+        z-index: 2999;
+    }
+
+    .jump-panel.open {
+        bottom: 70px;
+    }
+
+    .jump-panel button {
+        padding: 10px 0;
+        border: none;
+        border-radius: 6px;
+        background: #fff;
+        color: #1d365e;
+        font-size: 14px;
+    }
+
+    #jumpToggle {
+        display: block;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background: #1d365e;
+        color: #fff;
+        font-size: 24px;
+        z-index: 3000;
+        border: 1px solid #fff;
+    }
+}
+
+/* =================================== */
+/* 共通 */
+/* =================================== */
+
+.container {
+    /* 本体カラム */
+    max-width: 1200px; /* 最大px */
+    width: 100%; /* 画面が狭いときは100%に縮む */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 15px 30px 200px 30px; /* 上右下左の余白（スマホ対策） */
+    font-family: 'Meiryo UI', 'ヒラギノ明朝 ProN', 'Hiragino Mincho ProN', sans-serif;
+}
+
+.container a {
+    color: #1d365e;
+}
+
+h2 {
+    /* ページタイトル */
+    font-family: serif;
+    margin-top: 50px;
+}
+
+hr {
+    /* 水平線 */
+    border: none;
+    height: 1px; /* 線の太さ */
+    background-color: #ccc; /* 線の色 */
+    margin-bottom: 50px;
+}
+
+/* =================================== */
+/* END3 */
+/* =================================== */
+
+.clear-btn {
+    /* ローカルストレージ消去 */
+    margin-top: 30px;
+    padding: 8px 20px;
+    background: #1d365e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background: #142847;
+}
+
+/* =================================== */
+/* 会話 */
+/* =================================== */
+
+.message_layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    align-items: start; /* 常に上寄せ */
+}
+
+.face_area {
+    /* 名前の表示枠 */
+    position: relative;
+    padding: 0.25em 1em;
+    text-align: center;
+}
+
+.face_area:before,
+.face_area:after {
+    content: '';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+}
+.face_area:before {
+    border-left: solid 1px #5767bf;
+    border-top: solid 1px #5767bf;
+    top: 0;
+    left: 0;
+}
+.face_area:after {
+    border-right: solid 1px #5767bf;
+    border-bottom: solid 1px #5767bf;
+    bottom: 0;
+    right: 0;
+}
+.face_area p {
+    margin: 0;
+    padding: 0;
+}
+
+.name_area {
+    /* 名前の表示枠 */
+    position: relative;
+    padding: 0.25em 1em;
+    text-align: center;
+}
+.name_area:before,
+.name_area:after {
+    content: '';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+}
+.name_area:before {
+    border-left: solid 1px #5767bf;
+    border-top: solid 1px #5767bf;
+    top: 0;
+    left: 0;
+}
+.name_area:after {
+    border-right: solid 1px #5767bf;
+    border-bottom: solid 1px #5767bf;
+    bottom: 0;
+    right: 0;
+}
+.name_area p {
+    margin: 0;
+    padding: 0;
+}
+
+.narration {
+    /* 説明書き */
+    font-family: serif;
+    font-style: italic;
+    padding: 20px 0px 20px 0px; /* 上右下左の余白 */
+}
+
+.face {
+    /* 顔画像 */
+    width: 100px;
+    height: auto; /* 縦横比を維持 */
+    display: block; /* 余白を防ぐ */
+    margin: 0 auto; /* 画像中央揃え */
+    text-align: center; /* 水平方向を中央に */
+}
+
+tr,
+td {
+    padding: 5px 5px 5px 5px; /* 余白 */
+}
+
+.says {
+    /* 吹き出し */
+    /* white-space: pre-line; */
+    display: inline-block;
+    position: relative;
+    margin: 5px 0 0 20px;
+    padding: 17px 13px;
+    border-radius: 12px;
+    background: #d7ebfe;
+    line-height: 1.5;
+}
+
+.says:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    left: -24px;
+    border: 12px solid transparent;
+    border-right: 12px solid #d7ebfe;
+}
+
+.says p {
+    margin: 0;
+    padding: 0;
+}
+
+.conditional {
+    /* 2周目画像・日記表示用 */
+    display: none;
+    background-color: #bc85be;
+    padding: 12px 16px;
+}
+
+.conditional-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 769px) {
+    .conditional {
+        /* 2周目画像・日記表示用 */
+        padding: 0;
+    }
+
+    .conditional-img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ===== PC ===== */
+@media (min-width: 769px) {
+    .message_layout {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        align-items: start;
+    }
+
+    /* 左列は縦並び */
+    .left_column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .face_area {
+        grid-column: 1;
+        grid-row: 1;
+        width: 180px;
+    }
+
+    .content {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .name_area {
+        grid-column: 1;
+        grid-row: 2;
+        width: 180px;
+    }
+}
+
+/* ===== スマホ ===== */
+@media (max-width: 768px) {
+    .message_layout {
+        display: block; /* ← Grid解除 */
+    }
+
+    .left_column {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 6px;
+        gap: 10px;
+    }
+
+    .says {
+        margin: 10px 0 0 0; /* 左マージン削除 */
+    }
+
+    .says:after {
+        top: -24px;
+        left: 20px;
+        border: 12px solid transparent;
+        border-bottom: 12px solid #d7ebfe; /* 上向き三角 */
+    }
+
+    .face {
+        /* 顔画像 */
+        width: 70px;
+    }
+}
+
+.bg_pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    z-index: -1;
+}
+.Paper_v2 {
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 25px,
+            rgba(0, 0, 0, 0.04) 26px,
+            rgba(0, 0, 0, 0.04) 26px,
+            transparent 27px,
+            transparent 51px,
+            rgba(0, 0, 0, 0.04) 52px,
+            rgba(0, 0, 0, 0.04) 52px,
+            transparent 53px,
+            transparent 77px,
+            rgba(0, 0, 0, 0.04) 78px,
+            rgba(0, 0, 0, 0.04) 78px,
+            transparent 79px,
+            transparent 103px,
+            rgba(0, 0, 0, 0.04) 104px,
+            rgba(0, 0, 0, 0.04) 104px,
+            transparent 105px,
+            transparent 129px,
+            rgba(0, 0, 0, 0.04) 130px,
+            rgba(0, 0, 0, 0.04) 130px
+        ),
+        repeating-linear-gradient(
+            to right,
+            transparent 25px,
+            rgba(0, 0, 0, 0.04) 26px,
+            rgba(0, 0, 0, 0.04) 26px,
+            transparent 27px,
+            transparent 51px,
+            rgba(0, 0, 0, 0.04) 52px,
+            rgba(0, 0, 0, 0.04) 52px,
+            transparent 53px,
+            transparent 77px,
+            rgba(0, 0, 0, 0.04) 78px,
+            rgba(0, 0, 0, 0.04) 78px,
+            transparent 79px,
+            transparent 103px,
+            rgba(0, 0, 0, 0.04) 104px,
+            rgba(0, 0, 0, 0.04) 104px,
+            transparent 105px,
+            transparent 129px,
+            rgba(0, 0, 0, 0.04) 130px,
+            rgba(0, 0, 0, 0.04) 130px
+        );
+}
+
+/* =========================
+   スマホ表示（768px以下）　名簿作成ページ
+   ========================= */
+@media screen and (max-width: 768px) {
+    /* 表をカード化 */
+    .record_list,
+    .record_list thead,
+    .record_list tbody,
+    .record_list tr,
+    .record_list th,
+    .record_list td {
+        display: block;
+        width: 100%;
+    }
+
+    /* ヘッダ行は非表示 */
+    .record_list thead {
+        display: none;
+    }
+
+    /* 1人分をカードとして表示 */
+    .record_list tr {
+        margin-bottom: 16px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fafafa;
+    }
+
+    /* 各セル */
+    .record_list td {
+        border: none;
+        padding: 6px 0;
+    }
+
+    /* No + 写真を横並び */
+    .record_list td.photo,
+    .record_list td.no {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .record_list td.photo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* ラベルを付ける */
+    .record_list td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75em;
+        color: #666;
+        margin-bottom: 2px;
+    }
+
+    /* 入力欄を全幅に */
+    .record_list input[type='text'],
+    .record_list select {
+        width: 100%;
+    }
+
+    /* ヒントは少し強調 */
+    .record_list td.hint {
+        background: #f0f0f0;
+        padding: 8px;
+        border-radius: 4px;
+    }
+}

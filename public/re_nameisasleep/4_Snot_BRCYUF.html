@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『鼻水』の記憶 (4/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『鼻水』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_4_Snot', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***水をかき分ける音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: '川が結構深くなってる。\n急がないと。',
+                },
+
+                { type: 'narration', text: '***しばらく小走りの音が続く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: 'バスが岩に埋もれてる……\nまた土砂崩れ？\あれ？チュウくんがいない？\nチュウくん！',
+                },
+
+                { type: 'narration', text: '***辺りを歩き回る音がする。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: 'チュウくん！バスの中にいるの！？\nうっ！？\nい、岩に、押しつぶされてる……！',
+                },
+
+                { type: 'narration', text: '***走り出す音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: 'とにかく皆に知らせないと…。\nお……。\n川の中に石がある……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: '……。（この川、深い……！）\nやめておこう。',
+                },
+
+                { type: 'narration', text: '***遠くから激しい足音' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: 'ニャニャニャニャ！！\nチャン、だめニャー！！',
+                },
+
+                {
+                    type: 'narration',
+                    text: '***激しい衝突音',
+                },
+                {
+                    type: 'narration',
+                    text: '***水しぶきの音のあと、2人分の悲鳴が徐々に遠ざかる。',
+                },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『手塚ゾーン』の記憶 (16/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『手塚ゾーン』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_16_Tezuka-Zone', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: '「手塚ゾーン」とは言ったものの、ただの物置部屋だな……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '私の豪邸の「手塚ゾーン」とは比べものにならないぐらい小さいですね。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'ヨネムラさん。\nなにかわかりましたか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'カツラギさんが吸い込まれた穴の場所を調べましたが……\n人間のものとは思えない足跡がありました……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '人間のものとは思えない足跡……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'リアスのじゃねえか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'は？俺のじゃねえよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: '調べたところ、ガブさんのものではありませんでした。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'じゃあ、ホッグのか。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: 'え、僕？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'ミルさんのものでもありませんでした。',
+                },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'そういえば、ナチョさん遅いですね。\n部屋のだいたいの場所は伝えてありますが……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'では、私が探してきます。\n<b>彼女が身につけているもの</b>から館内であればだいたいの場所がわかりますから。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'くれぐれも気をつけてくださいね。',
+                },
+
+                { type: 'narration', text: '扉が開く音。' },
+                { type: 'narration', text: '足音が遠ざかる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'じゃあ俺たちはもっとこの部屋を調べるか。',
+                },
+
+                { type: 'narration', text: '***しばらく静かな時間が流れる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'これは……？',
+                },
+
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: 'イワマさんなにかありましたか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'どうやら家族写真のようです。\n裏には、「2010/3/28 4才の誕生日」と書かれています。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'ここに住んでいた家族には子供がいたんだね……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'たしかに、子供用のおもちゃ箱を見つけたぜ。\nにしてもなんで今は誰もいないんだ……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: '絵本もあるぞ。内容はなんか…不気味だけど……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'これは…子供向けではないね……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: '……！？\n庶民の皆さん！離れてください！',
+                },
+
+                { type: 'narration', text: '***突如、地面に大きな穴が開く。' },
+                { type: 'narration', text: '***その穴に1人、吸い込まれる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: '嘘だろ……！？キンどこいったんだ！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'どうやら…\nこれがヨネムラさんが言っていた穴のことですね……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'なんでそんな冷静でいられんだよ！！\n助けにいかねえと！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: '待ってください！\nあなたの中から何か出てきます！',
+                },
+
+                { type: 'narration', text: '***穴から人間ではない手が伸びる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person26',
+                    text: '縺薙ｌ縺ｯ蠕ｩ隶舌?蠕ｩ隶舌?縺溘ａ縺ｮ逾医ｊ縲?\n莠ｺ繧剃ｸ榊ｹｸ縺ｫ縺吶ｋ縺溘ａ縺ｮ逾医ｊ縲?',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'なんだ……こいつ……！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '任せろ！俺がやる！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '<span style="font-size: 20px;">触っちゃだめだ！</span>\nもしかしたら、そのバケモノの正体は呪いかもしれない。\nとりあえず、逃げよう！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'お、おう……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: '同じ階に鍵のかかる書斎があります！\nそこに逃げましょう！',
+                },
+
+                { type: 'narration', text: '***急いで部屋から出る足音。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

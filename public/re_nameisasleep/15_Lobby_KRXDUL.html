@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『ロビー』の記憶 (15/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『ロビー』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_15_Lobby', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'おはよー。全員いる？一旦、状況を整理しよう。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'タケシ……。ミカ……。リサ…。ノンデリも動かなくなってた……。\nもう正直、なにがなんだかわかんねぇよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: '女子の部屋見に行ったけど、いたのは……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '私だけ。\nお手洗いに行ってたら全員いなくなってた。\nリーリヤちゃんちゃんとミカは2階の寝室に。\nリサはキッチンに行ったはず……。\nマミさんはそのまま残ってたけど……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'トモエさんとカツラギさんは行方不明ってことだね……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: 'まずいですね。\nアニのプライベートジェットもしばらくかかりそうです。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: 'え……私？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '違うと思うよ。',
+                },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'ヨネムラさん。\n館内に設置したと言っていた固定カメラはどうでしたか？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: '……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'ヨネムラさん……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'あ……すいません。みなさん、この映像見てください。',
+                },
+
+                { type: 'narration', text: '***映像が流れる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person17',
+                    text: 'カツラギが地面に空いた穴に吸い込まれていく……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'どうなってんだ……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'この現象が館内では頻繁に起こっている可能性があります。\n行方不明の方はこの穴に吸い込まれた可能性が高いでしょう。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'とりあえず、館内を探索しようか。\nまだ、誰も行ってない部屋は……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: '<b>テニスボールをすべて自分の半径1.5mほどの範囲に引き寄せるゾーン的な部屋</b>がありました。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: 'またゾーン……？\nまあいいか、じゃあみんなで一緒に行こう。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'あ、えと……私はお手洗い行ってくるよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'ナチョさん。くれぐれも気をつけてくださいね。',
+                },
+
+                { type: 'narration', text: '複数人の足音が遠ざかる。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

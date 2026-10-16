@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『リビング』の記憶 (9/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『リビング』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_9_LivingRoom', true);
+
+            //会話内容
+            const talks = [
+                //   見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'message', speaker: 'Person5', text: '調子どう？' },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: 'エラーが発生して、リカバリーモードに移行できない……。\n一日放電する必要があるかも。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'じゃあ今日は、皆でもう寝ましょう。\n人数も多いし、男女で分かれましょうか。\nでもなんかあったとき分かるように、できれば近い部屋がいいかな。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: '趣味で館を探索したのですが\n<b>なにか良くないことが行われているゾーン的な部屋</b>がありました。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'なにか良くないことが行われているゾーン的な部屋……？\nまあいいわ、女子はそこにしよっか。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'じゃあ俺らは隣の窓なし部屋になるか。\nてかあの部屋なんで窓ないんだ？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person11',
+                    text: 'どうやら\n<b>国家の意向に反するような塾を経営するための部屋</b>らしいです。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person15',
+                    text: '国家の意向に反するような塾を経営……？\nまあいいか、扉は開けとくから、何かあったら呼んでくれ。',
+                },
+                { type: 'message', speaker: 'Person5', text: '分かった。じゃあ皆行こっか。' },
+                { type: 'message', speaker: 'Person18', text: 'おいホッグ、行くぞ。' },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: 'あっ……、うん。わかった、ガブくん……。',
+                },
+
+                { type: 'narration', text: '***複数人が移動したあと、ささやき声がする。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: '皆さん、ここにいましたか。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'ひ、ひろし！？\nお前、どこに行ってたんだよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person9',
+                    text: 'この館の図書室があまりにも大きかったので\n本探しに没頭していました。\nレインホールさん。\nあなたがほしいと言っていた「家の間取り図大百科」もありましたよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person19',
+                    text: 'あ…ありがとうございます！',
+                },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

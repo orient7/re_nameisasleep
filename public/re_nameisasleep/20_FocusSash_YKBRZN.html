@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『きあいのタスキ』の記憶 (20/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『きあいのタスキ』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_20_FocusSash', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***バトルフィールドが開く音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '……おい、ここはどこだよ…！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '……え？どこ……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '君たちには殺し合いをしてもらうよ〜。\nというよりポケモンバトル……？\nまあ、私のこと楽しませてね。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'ふざけんな！！殺し合いなんてするわけないだろ！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'ホッグくんもおんなじ気持ちかな？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '……。ぼくは……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'お前…まさか俺に歯向かう気か？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '早く決着つけないと、二人とも死んじゃうよ〜。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '……。\nガブくん…僕一回真剣にとバトルしたかったんだ。\nガブくん。いや……リアスくん。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '本当に死んでもしらねぇぞ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'いいね〜。いいね〜。\nポケモン同士の真剣勝負って感じで。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '（俺のほうが速いんだから……。一撃で決めてやる。）',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '<span style="font-size: 30px;">じしん！！</span>',
+                },
+
+                { type: 'narration', text: '***大地が激しく揺れる音。' },
+                { type: 'narration', text: '***バトルフィールドが強い揺れに襲われる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'ちょっと。揺らしすぎでしょ！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'こんなのお前が耐えられるわけ……。',
+                },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '……！？',
+                },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '耐えられるよ。リアスくん。一回だけだけど……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '一回だけだけど、それで十分だから！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'お前まさか……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '『アナライズ』……。\n<span style="font-size: 30px;">れいとうパンチ！！</span>',
+                },
+
+                { type: 'narration', text: '***バトルフィールドに轟音が響く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '……！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: 'なーんてね冗談だよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: 'なんで……？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '君の『さめはだ』で僕も死んじゃうし。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'えー！つまんない！\nなんで？殺さなかったの？\nこのままだと二人とも死んじゃうよ〜！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person23',
+                    text: '殺すわけないじゃん。だって、リアスくんは僕の……\n<span style="font-size: 20px">友達なんだから。<span>',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'え〜！じゃあリアスは？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person18',
+                    text: '<span style="font-size: 20px;">どくづき！！</span>',
+                },
+
+                { type: 'narration', text: '***ﾊﾟﾘｰﾝ、窓ガラスが割れる音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'わかったよ…。あぶないな〜。\nじゃあ、バイバイ…。',
+                },
+
+                { type: 'narration', text: '***時計の鐘の音が2回、館中に鳴り響く。' },
+                { type: 'narration', text: '***バトルフィールドが閉じる音。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

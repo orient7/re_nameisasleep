@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『岩』の記憶 (3/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『岩』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_3_Rock', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: 'ごめんなさい。ごめんなさい。ごめんなさいニャ。\n皆シートベルトしてたから無事だったのに。\n薬を取りに立たなきゃ、マコトちゃんだって……\n僕なんかをかばったせいで……。家族の人になんて言えば……。\nあ……、マコトちゃんが娘さんから貰ったって言ってたお守り、きっとバスの中ニャ。',
+                },
+
+                { type: 'narration', text: '***雨の中、小声でつぶやく声。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: '網棚がひしゃげちゃってるな……。\nくそ、鞄がなかなか取れないニャ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person1',
+                    text: 'ニャンくん……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: 'マコトちゃん……！？生きてたんですね！！\nよかったニャ！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person1',
+                    text: 'ニャンくん……。逃げなさい。\nここは危険だ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: 'でも…そんな…マコトちゃんを置いて…\nそれに…僕のせいでマコトちゃんが……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person1',
+                    text: 'ニャンくん……。\n諦めたらそこで試合終了だよ。',
+                },
+
+                { type: 'narration', text: '***突然轟音が響く。' },
+                {
+                    type: 'narration',
+                    text: '***一人がバスから降りる足音。',
+                },
+                {
+                    type: 'narration',
+                    text: '***しばらく時間が流れる。',
+                },
+
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: 'マコトちゃん……。ごめんなさい……。\nとりあえずバスから離れたけど、ここがどこかわかんない。\nとりあえず、館の方へ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: 'お……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: 'あれは……チャンくん！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: '川の中に石がある……。\n……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: 'チャンくん！！だめニャ！！',
+                },
+
+                {
+                    type: 'narration',
+                    text: '***激しい衝突音',
+                },
+                {
+                    type: 'narration',
+                    text: '***水しぶきの音のあと、2人分の悲鳴が徐々に遠ざかる。',
+                },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

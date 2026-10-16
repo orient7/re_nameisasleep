@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『バス』の記憶 (2/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『バス』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_2_Bus', true);
+
+            //会話内容
+            const talks = [
+                /* 見本
+  {
+    type: "narration",
+    text: "***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。"
+  },
+  {
+    type: "message",
+    speaker: "Person2",
+    text: "ホテルまであとどれくらい？"
+  },
+  */
+
+                {
+                    type: 'narration',
+                    text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                },
+
+                { type: 'message', speaker: 'Person2', text: 'ホテルまであとどれくらいニャ？' },
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: 'しおりだと、あと、1時間半くらい。',
+                },
+                { type: 'message', speaker: 'Person2', text: '長いニャ！！' },
+                {
+                    type: 'message',
+                    speaker: 'Person3',
+                    text: 'マコト先生が、酔い止めあるって、言ってた。',
+                },
+                { type: 'message', speaker: 'Person2', text: '聞いてくるニャ！！' },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'あ、充電切れそう。\nキン、モバイルバッテリー持ってきてたよね？貸してくんない？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person22',
+                    text: 'モバイルバッテリー……？\nそんなくだらない庶民のアイテムを持っているわけないでしょう。\nかわりにこの最新スマホを差し上げます。',
+                },
+                { type: 'message', speaker: 'Person4', text: 'あ……ありがとう。' },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '修学旅行のアルバムに名前載せたいんですけど、下の名前なんて読むんですか？\nリクク？さん？',
+                },
+                { type: 'message', speaker: 'Person2', text: 'マコトちゃーん、酔い止め持ってる？' },
+                { type: 'message', speaker: 'Person1', text: 'あるある、ちょっと待ってね。' },
+
+                {
+                    type: 'narration',
+                    text: '***突如、上方から轟音が鳴り響き、複数人の叫び声がする。',
+                },
+
+                { type: 'message', speaker: 'Person1', text: '危ない！' },
+
+                { type: 'narration', text: '***車両があちこちにぶつかりながら崖を滑り落ちる音。' },
+                { type: 'narration', text: '***轟音が収まる。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '皆、大丈夫……？あ、マコト先生！血が出てる！',
+                },
+                { type: 'message', speaker: 'Person3', text: 'チュウくん！大丈夫！？' },
+                {
+                    speaker: 'Person7',
+                    text: '車内は危ないかもしれない。皆、一旦外に出て！',
+                },
+
+                {
+                    type: 'narration',
+                    text: '***不安げな声と複数の足音。全員が車両の外に出たようだ。',
+                },
+
+                { type: 'message', speaker: 'Person8', text: '何が起きたの？' },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '上の方、道路が崩れてる。あそこから落ちてきたのかな。\n土砂崩れに巻き込まれたっぽいね。',
+                },
+                { type: 'message', speaker: 'Person10', text: 'あー、最悪。眼鏡割れてる。' },
+                { type: 'message', speaker: 'Person17', text: 'アンザイ先生は大丈夫か？' },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'マコト先生、返事して！誰か救急車呼んだ？',
+                },
+                { type: 'message', speaker: 'Person16', text: 'スマホ繋がんないペコ！' },
+                { type: 'message', speaker: 'Person4', text: 'うそ、私のも駄目だ。' },
+                { type: 'message', speaker: 'Person3', text: 'チュウくん、怪我は？' },
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: '僕は大丈夫ニャ。マコトちゃんがかばってくれて……、マコトちゃんは？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'バスが落ちたときに頭をぶつけたみたい。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person7',
+                    text: 'どうしましょう、もう脈がありませんね。',
+                },
+                { type: 'message', speaker: 'Person2', text: 'そんニャ……。' },
+
+                { type: 'narration', text: '***しばらく雨音だけが響く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person13',
+                    text: 'ねえ、崖の上走ってるとき、近くに家…っていうか<b>館</b>みたいなのがあるの見つけたんだけど、\nそこに助け呼びに行ってみない？',
+                },
+                { type: 'message', speaker: 'Person8', text: '行き方、分かりそう？' },
+                {
+                    type: 'message',
+                    speaker: 'Person13',
+                    text: 'この辺は木ばっかだし、道は見えなかったから何とも。迷ったらごめん。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person8',
+                    text: '言いにくいけど……、マコトちゃん背負ってくと危ないかも。\n雨と木で視界が悪いし、地面もぬかるんでて滑落の危険がある。\n館までの道を確認してから、またここまで戻ってくる方がいい。',
+                },
+                { type: 'message', speaker: 'Person2', text: 'じゃあ僕、ここで待ってるニャ。' },
+                { type: 'message', speaker: 'Person3', text: '僕も、残る。' },
+                {
+                    type: 'message',
+                    speaker: 'Person2',
+                    text: '一人で大丈夫ニャ。\nなら、チャンその館ってところまで着いたら呼びに来てくれるニャ？',
+                },
+                { type: 'message', speaker: 'Person3', text: '……分かった。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

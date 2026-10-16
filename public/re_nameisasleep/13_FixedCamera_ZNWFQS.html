@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="icon" href="/re_nameisasleep/img/SPI.png" /> -->
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『固定カメラ』の記憶 (13/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『固定カメラ』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_13_FixedCamera', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                { type: 'narration', text: '***？？？が開く音' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '……！？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: '……！？\n喰種……さん？',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: 'どうやら気を失っていたようだ。\n強くならなきゃいけないのに……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '君たちには<b>殺し合い</b>をしてもらうよ〜。\n私のこと楽しませてね。\nリーリヤちゃんにはこれあげる。',
+                },
+
+                { type: 'narration', text: '***天井からなにかが落ちる音' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'すごい…！！機関銃だ！！\nしかも実物大の！！',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '僕を…人殺しにしないでくれ……。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'なんか勝った気でいるけど、それ本物の銃だからね。\nくれぐれも気をつけてね。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: '喰種さん……。\n',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '間違っているのは僕じゃない……。\n間違っているのはこの世界だ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: '<b style="color: red;">Kan jag skjuta dig till döds med den här pistolen?\n（この銃で君のこと撃ち殺してもいい？）</b>',
+                },
+
+                { type: 'narration', text: '***発砲音が響き渡る。' },
+
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+                { type: 'narration', text: '' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '今さらこんなの…痛がると思った？',
+                },
+
+                { type: 'narration', text: '***激しい銃声。' },
+                { type: 'narration', text: '***何度も何度も何度も何度も。' },
+                { type: 'narration', text: '***その音に躊躇はなかった。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'Det har verkligen rejäl kraft.\n（中々打ちごたえがあるね。）',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: 'この世界を歪めているのは喰種だけじゃない。あなたもだ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'Haha, ja.\n（はは、そうだね。）',
+                },
+
+                { type: 'narration', text: '***銃声が続く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '僕は自分を見失わない。それが僕の戦い方だ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'Och tänk om jag skulle dominera dig?\n（じゃあ、私があなたを支配したら？）',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: '僕があなたを超えればいい。',
+                },
+
+                { type: 'narration', text: '***銃声が続く。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: 'これはそろそろ決着かな〜。',
+                },
+
+                {
+                    type: 'message',
+                    speaker: 'Person24',
+                    text: 'うっ……。\nこの世の全ての不利益は…当人の能力不足。',
+                },
+
+                { type: 'narration', text: '***倒れる音。' },
+                { type: 'narration', text: '***時計の鐘の音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person20',
+                    text: 'Det var kul att försöka döda varandra. Ken-kun.\n（あなたと殺し合いができて楽しかった。ケンくん。）',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person25',
+                    text: '最初の一発。\nあれには遅効性の『呪い』を付与しておいたからね〜。',
+                },
+
+                { type: 'narration', text: '***？？？が閉じる音。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>

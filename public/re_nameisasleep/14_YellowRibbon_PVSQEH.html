@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/re_nameisasleep/img/SPI.png" />
+        <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
+
+        <!-- タブタイトル -->
+        <title>『黄色のリボン』の記憶 (14/33)</title>
+    </head>
+
+    <body>
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div id="header"></div>
+        </header>
+
+        <!-- 本文タイトル -->
+        <div class="container">
+            <h2>『黄色のリボン』の記憶</h2>
+            <hr />
+
+            <!-- 本文/会話 -->
+            <div id="talk"></div>
+        </div>
+
+        <!-- フッター -->
+        <div id="footer"></div>
+
+        <script>
+            //調査記録で表示ON
+            localStorage.setItem('visited_14_YellowRibbon', true);
+
+            //会話内容
+            const talks = [
+                // 見本
+                // {
+                //     type: 'narration',
+                //     text: '***車両が走行中の音と、窓ガラスに打ち付ける強い雨音。',
+                // },
+                // {
+                //     type: 'message',
+                //     speaker: 'Person2',
+                //     text: 'ホテルまであとどれくらい？',
+                // },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: '私はみんなを殺さないといけない。',
+                },
+
+                {
+                    type: 'narration',
+                    text: '***遠くの声が近づく。',
+                },
+
+                {
+                    type: 'message',
+                    speaker: 'Person12',
+                    text: 'あ、マミさん！！大変だ！ミカが…！\n…って、なんで銃を構えて……？',
+                },
+
+                { type: 'narration', text: '***発泡音。' },
+                { type: 'narration', text: '***時計の鐘の音。' },
+
+                {
+                    type: 'message',
+                    speaker: 'Person5',
+                    text: 'ごめんなさい、ハイタニさん。\n私は全員を殺さないと……。',
+                },
+
+                { type: 'narration', text: '***注射器が体に刺さる音。' },
+                { type: 'narration', text: '***倒れる音。' },
+            ];
+        </script>
+
+        <script src="/re_nameisasleep/js/script.js"></script>
+    </body>
+</html>
