@@ -23,6 +23,17 @@
 
             <!-- 本文/会話 -->
             <div id="talk"></div>
+
+            <!-- 絵本 -->
+            <div id="before-reporting-area" style="display: none" class="conditional">
+                <br /><br /><br />
+                <img
+                    src="/re_nameisasleep/img/book_Battlefield.png"
+                    class="conditional-img"
+                /><br />
+                <img src="/re_nameisasleep/img/book_MudMan.png" class="conditional-img" /><br />
+                <br /><br />
+            </div>
         </div>
 
         <!-- フッター -->
@@ -236,7 +247,21 @@
                 },
 
                 { type: 'narration', text: '***急いで部屋から出る足音。' },
+
+                { type: 'narration', text: '' },
+                { type: 'hr' },
+                {
+                    type: 'message',
+                    speaker: 'psychometry',
+                    text: '音声記憶を元に探して見つけた絵本を置いとくっす！',
+                },
             ];
+
+            //日記表示制御
+            const area = document.getElementById('before-reporting-area');
+            if (area) {
+                area.style.display = 'block';
+            }
         </script>
 
         <script src="/re_nameisasleep/js/script.js"></script>
