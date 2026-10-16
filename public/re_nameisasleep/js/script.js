@@ -147,7 +147,7 @@ const archiveData = [
 		words: ["ヘッドホン", "ヘッドフォン", "ヘッドセット", "イヤフォン", "イヤホン"],
 	}, {
 		no: 18,
-		title: "『バドルフィールド』の記憶",
+		title: "『けっとうじょう』の記憶",
 		url: "/re_nameisasleep/18_Battlefield_LQHPMC.html",
 		key: "visited_18_Battlefield",
 		visited: localStorage.getItem("visited_18_Battlefield") === "true",
