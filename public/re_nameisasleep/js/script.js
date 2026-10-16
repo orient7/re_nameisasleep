@@ -117,8 +117,8 @@ const archiveData = [
 		no: 14,
 		title: "『冷凍庫』の記憶",
 		url: "/re_nameisasleep/14_Freezer_ARQZHV.html",
-		key: "visited_14_FixedCamera",
-		visited: localStorage.getItem("visited_14_FixedCamera") === "true",
+		key: "visited_14_Freezer",
+		visited: localStorage.getItem("visited_14_Freezer") === "true",
 		related: "<details><summary></summary>12</details>",
 		words: ["冷凍庫"],
 	}, {
