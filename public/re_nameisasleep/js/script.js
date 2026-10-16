@@ -195,7 +195,7 @@ const archiveData = [
 	}, {
 		no: 24,
 		title: "END 2",
-		url: "/re_nameisasleep/24_END2_LAMZBT.html",
+		url: "/re_nameisasleep/24_END2_VCFHNY.html",
 		key: "visited_24_END2",
 		visited: localStorage.getItem("visited_24_END2") === "true",
 		related: "<details><summary></summary>名簿作成が全て正しい</details>"
