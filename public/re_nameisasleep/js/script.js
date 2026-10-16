@@ -233,7 +233,7 @@ const archiveData = [
 
 /* ===== 正解データ（必ず24要素） ===== */
 const correctData = [
-	{ lastName: "アンドウ", firstName: "マコト", deathFactor: "土砂崩れ", cause: "転落死" },
+	{ lastName: "アンザイ", firstName: "マコト", deathFactor: "土砂崩れ", cause: "転落死" },
 	{ lastName: "ニャン", firstName: "チュウ", deathFactor: "川", cause: "溺死" },
 	{ lastName: "ボー", firstName: "チャン", deathFactor: "川", cause: "溺死" },
 	{ lastName: "ナチョ", firstName: "ネコ", deathFactor: "生存", cause: "生存" },
