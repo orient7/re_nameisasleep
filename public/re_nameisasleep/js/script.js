@@ -152,7 +152,7 @@ const archiveData = [
 		key: "visited_18_Battlefield",
 		visited: localStorage.getItem("visited_18_Battlefield") === "true",
 		related: "<details><summary></summary>27</details>",
-		words: ["バドルフィールド"],
+		words: ["けっとうじょう", "決闘場", "バドルフィールド"],
 	}, {
 		no: 19,
 		title: "『スリング』の記憶",
