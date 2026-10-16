@@ -239,12 +239,12 @@ const correctData = [
 	{ lastName: "ナチョ", firstName: "ネコ", deathFactor: "生存", cause: "生存" },
 	{ lastName: "トモエ", firstName: "マミ", deathFactor: "生存", cause: "生存" },
 	{ lastName: "カニ", firstName: "モニカ", deathFactor: "怪異", cause: "凍死" },
-	{ lastName: "ヨネムラ", firstName: "デンジロウ", deathFactor: "声No7", cause: "銃殺" },
-	{ lastName: "ノンデリ", firstName: "ロボ", deathFactor: "声No5", cause: "銃殺" },
+	{ lastName: "ヨネムラ", firstName: "デンジロウ", deathFactor: "声No7", cause: "射殺" },
+	{ lastName: "ノンデリ", firstName: "ロボ", deathFactor: "声No5", cause: "射殺" },
 	{ lastName: "イワマ", firstName: "ムテキ", deathFactor: "生存", cause: "生存" },
 	{ lastName: "コンドウ", firstName: "カイト", deathFactor: "声No21", cause: "毒死" },
 	{ lastName: "ヒノ", firstName: "ケント", deathFactor: "生存", cause: "生存" },
-	{ lastName: "ハイタニ", firstName: "タケシ", deathFactor: "声No5", cause: "銃殺" },
+	{ lastName: "ハイタニ", firstName: "タケシ", deathFactor: "声No5", cause: "射殺" },
 	{ lastName: "アン", firstName: "ミカ", deathFactor: "怪異", cause: "凍死" },
 	{ lastName: "オトハラ", firstName: "タクロウ", deathFactor: "声No21", cause: "毒死" },
 	{ lastName: "ミズノ", firstName: "ユウト", deathFactor: "生存", cause: "生存" },
@@ -256,7 +256,7 @@ const correctData = [
 	{ lastName: "ヨイザキ", firstName: "アイリス", deathFactor: "生存", cause: "生存" },
 	{ lastName: "ヒカ", firstName: "キン", deathFactor: "声No21", cause: "呪殺" },
 	{ lastName: "ミル", firstName: "ホッグ", deathFactor: "声No21", cause: "呪殺" },
-	{ lastName: "カネキ", firstName: "ケン", deathFactor: "声No20", cause: "銃殺" }
+	{ lastName: "カネキ", firstName: "ケン", deathFactor: "声No20", cause: "射殺" }
 ];
 
 //2周目用
