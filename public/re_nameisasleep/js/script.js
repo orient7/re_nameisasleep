@@ -364,12 +364,12 @@ function autoLoad() {
 	if (!data) return;
 
 	// ===== 旧→新 変換マップ =====
-	// const causeMap = {
-	// 	"圧殺": "圧死",
-	// 	"刺殺": "失血死(刺傷)",
-	// 	"撲殺": "失血死(打撲)",
-	// 	"毒殺": "中毒死"
-	// };
+	const causeMap = {
+		"圧殺": "圧死",
+		"刺殺": "失血死(刺傷)",
+		"撲殺": "失血死(打撲)",
+		// "毒殺": "中毒死"
+	};
 
 	const rows = table.querySelectorAll("tr");
 	rows.forEach((row, index) => {
