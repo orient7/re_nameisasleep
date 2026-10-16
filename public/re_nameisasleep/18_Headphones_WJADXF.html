@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/re_nameisasleep/css/style.css" type="text/css" />
 
         <!-- タブタイトル -->
-        <title>END 1 (23/24)</title>
+        <title>『ヘッドホン』の記憶 (18/25)</title>
     </head>
 
     <body>
@@ -18,14 +18,11 @@
 
         <!-- 本文タイトル -->
         <div class="container">
-            <h2>END 1</h2>
+            <h2>『ヘッドホン』の記憶</h2>
             <hr />
 
             <!-- 本文/会話 -->
             <div id="talk"></div>
-
-            <br /><br /><br />
-            <a href="/re_nameisasleep/list.html">←名簿作成に戻る</a>
         </div>
 
         <!-- フッター -->
@@ -33,7 +30,7 @@
 
         <script>
             //調査記録で表示ON
-            localStorage.setItem('visited_30_END1', true);
+            localStorage.setItem('visited_18_Headphones', true);
 
             //会話内容
             const talks = [
@@ -48,13 +45,26 @@
                 //     text: 'ホテルまであとどれくらい？',
                 // },
 
-                { type: 'narration', text: '***調査完了報告時の記録を以下に記す。' },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: 'こんなに人が死んで……、ミカも、モニカも……。\n探索なんて、すぐに気持ち切り替えられないって。\nゲームでもしなきゃ、やってらんないよ。',
+                },
+                {
+                    type: 'message',
+                    speaker: 'Person4',
+                    text: '昨日もトイレ行くふりして、図書館でゲームしてたけど……\n早く戻ってたら…みんないなくならなかったのかな……。',
+                },
+
+                { type: 'narration', text: '突如、地面に大きな穴が開く。' },
 
                 {
                     type: 'message',
-                    speaker: 'parallel',
-                    text: '名簿の作成、お疲れさま！\nさっそくチェックさせてもらうね～。\n……うーん。\n他の平行世界のあなたたちは、別の答えを出しているみたい。\n正しい可能性に収束させるために、もうちょっとだけ協力してほしいな！',
+                    speaker: 'Person4',
+                    text: 'は！？なにこれ！！\n助けて！！誰かいないの？ちょっと！！',
                 },
+
+                { type: 'narration', text: 'その穴に1人、吸い込まれる。' },
             ];
         </script>
 
