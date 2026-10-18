@@ -195,11 +195,12 @@ const archiveData = [
 		words: ["子供部屋", "キッズルーム", "子ども部屋", "チャイルドルーム", "こども部屋"],
 	}, {
 		no: 24,
-		title: "END 1",
+		title: "『白い仮面』の記憶",
 		url: "/re_nameisasleep/24_WhiteMask_UCBXMW.html",
 		key: "visited_24_WhiteMask",
 		visited: localStorage.getItem("visited_24_WhiteMask") === "true",
-		related: "<details><summary></summary>名簿作成に一部誤りがある</details>"
+		related: "<details><summary></summary>名簿作成に一部誤りがある</details>",
+		words: ["仮面", "白い仮面"],
 	}, {
 		no: 25,
 		title: "END 1",
