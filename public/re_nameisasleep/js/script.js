@@ -196,16 +196,23 @@ const archiveData = [
 	}, {
 		no: 24,
 		title: "END 1",
-		url: "/re_nameisasleep/24_END1_QWUPKC.html",
-		key: "visited_24_END1",
-		visited: localStorage.getItem("visited_24_END1") === "true",
+		url: "/re_nameisasleep/24_WhiteMask_UCBXMW.html",
+		key: "visited_24_WhiteMask",
+		visited: localStorage.getItem("visited_24_WhiteMask") === "true",
 		related: "<details><summary></summary>名簿作成に一部誤りがある</details>"
 	}, {
 		no: 25,
+		title: "END 1",
+		url: "/re_nameisasleep/25_END1_QWUPKC.html",
+		key: "visited_25_END1",
+		visited: localStorage.getItem("visited_25_END1") === "true",
+		related: "<details><summary></summary>名簿作成に一部誤りがある</details>"
+	}, {
+		no: 26,
 		title: "END 2",
-		url: "/re_nameisasleep/25_END2_VCFHNY.html",
-		key: "visited_25_END2",
-		visited: localStorage.getItem("visited_25_END2") === "true",
+		url: "/re_nameisasleep/26_END2_VCFHNY.html",
+		key: "visited_26_END2",
+		visited: localStorage.getItem("visited_26_END2") === "true",
 		related: "<details><summary></summary>名簿作成が全て正しい</details>"
 	},
 	// {
@@ -251,8 +258,8 @@ const correctData = [
 	{ lastName: "ウサダ", firstName: "ペコラ", deathFactor: "声No16", cause: "圧死" },
 	{ lastName: "クサノ", firstName: "ケント", deathFactor: "生存", cause: "生存" },
 	{ lastName: "ガブ", firstName: "リアス", deathFactor: "声No21", cause: "呪殺" },
-	{ lastName: "レインホール", firstName: "アニ", deathFactor: "生存", cause: "生存" },
-	{ lastName: "カツラギ", firstName: "リーリヤ", deathFactor: "生存", cause: "生存" },
+	{ lastName: "レインホール", firstName: "アニ", deathFactor: "声No21", cause: "呪殺" },
+	{ lastName: "カツラギ", firstName: "リーリヤ", deathFactor: "声No21", cause: "呪殺" },
 	{ lastName: "ヨイザキ", firstName: "アイリス", deathFactor: "生存", cause: "生存" },
 	{ lastName: "ヒカ", firstName: "キン", deathFactor: "声No21", cause: "呪殺" },
 	{ lastName: "ミル", firstName: "ホッグ", deathFactor: "声No21", cause: "呪殺" },
